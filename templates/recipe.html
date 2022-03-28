@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <html>
+ 
+          <a class="ml-4" href="/">Back To Recipe List</a>
+          <br>
+          <br>
+         
+          <h3 >{{ name }} Recipe</h3>
+          <h3>Ingredients:</h3>
+          <ul>
+          {% for item in ingredients %}
+          <li>{{ item }}</li>
+          {% endfor %}
+          </ul>
+          <h3>Ingredients:</h3>
+          <ol>
+          {% for item in instructions %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ol>
+  </body>
+</html>
+  

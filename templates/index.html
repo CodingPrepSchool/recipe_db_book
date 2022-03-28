@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>My Grandma's Recipes</h1>
+    <p>Welcome to my cookbook. I would like to share with you my Grandma's favorite recipes. I hope you will enjoy these dishes!</p>
+    <!-- Implement a for loop using `template_recipes`-->
+    
+    {% for row in rows %}
+    <p><a href="/recipe/{{ row['id'] }}">{{ row["recipe_name"] }}</a></p>
+     {% endfor %}
+
+
+     <br>Add New Recipe To Our Collection
+
+     <form action="/recipes/add-new", method="POST">
+       {{ template_form.hidden_tag() }}
+       <p>{{ template_form.recipe_name.label }}
+       {{ template_form.recipe_name() }}</p>
+       <p>{{ template_form.ingredients.label }}
+       {{ template_form.ingredients() }}</p>
+       <p>{{ template_form.instructions.label }}
+       {{ template_form.instructions() }}</p>
+       <p>{{ template_form.submit() }}</p>
+       
+     </form>
+  </body>
+</html>
