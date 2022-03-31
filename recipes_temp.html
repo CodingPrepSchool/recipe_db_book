@@ -1,0 +1,27 @@
+<DOCTYPE>
+    <html>
+        <!--<head>
+            <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main/recipe.css') }}">
+         </head>-->
+        <body>
+        <h1>{{ recipe_name }}</h1>
+        <br>
+        <br>
+        <h3>Ingredients</h3>
+        <ul>
+        {% for ingredient in ingredients %}
+            <li><p>{{ingredient}}</p></li>
+        {% endfor %}
+        <br>
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+        {% for instruction in instructions %}
+        <li><p>{{instruction}}</p></li>
+        {% endfor %}
+        <br>
+       </ol>
+    </body>
+        <a href = "/">Go back to home page</a>
+    </html>
+</DOCTYPE>

@@ -1,0 +1,45 @@
+<DOCTYPE>
+    <html>
+        <head>
+            <!--<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main/recipie.css') }}">-->
+         </head>
+    <head>
+    </head>
+    <h1>My Grandma's Recipie Book</h1>
+    <p id = "index-caption">Welcome to my cookbook. I would like to share my grandma's faveorite recipies. I hope you enjoy these dishes!</p>
+</div>
+<br>
+<ul>
+    {% for row in rows%}
+    <a href="/recipe/{{ row['recipe_id'] }}">{{ row["recipe_name"] }}</a>
+    <br>
+    {% endfor %}
+    <br>
+</ul>
+<br>
+    <form action="/add_recipie" method="POST"> 
+        {{template_form.hidden_tag()}} 
+        <h2>Add your own recipie:</h2>
+        <p>
+            {{ template_form.recipe_name.label }}
+            {{ template_form.recipe_name() }}
+        </p>
+        <p>
+            {{ template_form.ingrediants.label }}
+            {{ template_form.ingrediants() }}
+        </p>
+        <p>
+            {{ template_form.instructions.label }}
+            {{ template_form.instructions() }}
+        </p>
+        <br>
+        <p>
+            {{ template_form.submit.label }}
+            {{ template_form.submit() }}
+        </p>
+    <br>
+    </form>
+    </html>
+</DOCTYPE>
+    </html>
+</DOCTYPE>
