@@ -1,0 +1,36 @@
+<DOCRYPE>
+    <html>
+        <head></head>
+        <body>
+            <h1>My Grandmas Recipes</h1>
+            <br>
+            <br>
+            <p>Welcome to my cookbook.I would like to share with you my grandmas favourite recipes.
+                I hope you will engoy these dishes!</p>
+            <br>
+            <br>
+            <ul>
+                {% for row in rows %}
+                <a href="/recipe/{{ row['recipe_id'] }}">{{ row["recipe_name"] }}</a>
+                <br>
+                {% endfor %}
+            </ul>
+                <form action="/recipe/add" method="POST">
+
+                    <h1>Fill Out these Fields to Add a New Recipe</h1>
+                    {{template_form.hidden_tag() }}
+                    <p>
+                        {{template_form.name.label}}
+                        {{template_form.name() }}</p>
+                    <p>
+                        {{template_form.ingredients.label}}
+                        {{template_form.ingredients }}</p>
+                    <p>
+                        {{template_form.instructions.label}}
+                        {{template_form.instructions() }}</p>
+                    <p>
+                        {{template_form.submit() }}</p>
+                </form>
+        </body>
+    </html>
+</DOCRYPE>
