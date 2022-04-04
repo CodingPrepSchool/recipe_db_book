@@ -1,7 +1,7 @@
 <DOCTYPE>
     <html>
         <head>
-            <!--<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main/recipie.css') }}">-->
+            <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main/recipe.css') }}">
          </head>
     <head>
     </head>
@@ -25,8 +25,8 @@
             {{ template_form.recipe_name() }}
         </p>
         <p>
-            {{ template_form.ingrediants.label }}
-            {{ template_form.ingrediants() }}
+            {{ template_form.ingredients.label }}
+            {{ template_form.ingredients() }}
         </p>
         <p>
             {{ template_form.instructions.label }}
