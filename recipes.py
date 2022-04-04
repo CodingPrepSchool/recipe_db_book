@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-# from flask_bootstrap import Bootstrap5
+from flask_bootstrap import Bootstrap
 import json
 from forms import RecipeForm
 import sqlite3
@@ -31,8 +31,6 @@ def all_recipies(id):
         name = row[0]
         ingredients = json.loads(row[1]) # 
         instructions = json.loads(row[2]) #loads() method can be used to convert a valid JSON string into a Python Dictionary
-    # print(ingredients)
-    # print(instructions)
     con.commit()
     con.close
     return render_template("recipe.html", name=name, instructions = instructions, ingredients = ingredients, template_form=recipe_form)
@@ -58,3 +56,5 @@ def new_rec():
 # The json. load() is used to read the JSON document from file and The json. loads() is used to convert the JSON String document into the Python dictionary.
 # dump() method (without “s” in “dump”) used to write Python serialized object as JSON formatted data into a file. The json. dumps() method encodes any Python object into JSON formatted String.
 
+if __name__ == "__main__":
+    app.run(debug=True)
